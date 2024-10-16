@@ -1,0 +1,620 @@
+*::after {
+    box-sizing: border-box;
+}
+
+/*Убираем внутренние отступы слева тегам списка у которых есть атрибуты class*/
+
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+body,
+:where(blockquote, figure):where([class]) {
+    margin: 0;
+}
+
+:where(ul, ol, dl, h1, h2, h3, h4, h5, h6, p):where([class]) {
+    margin-block: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(ul[class]) {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/*Наследуем свойства шрифт для полей ввода*/
+
+input, textarea, select, button {
+    font: inherit;
+}
+
+html {
+    height: 100%;
+
+    /*Плавный скрол*/
+
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100%;
+
+    line-height: 1.5;
+}
+
+/*Удаляем всу анимации и переходы для людей, которые предпочитают их не использовать*/
+
+@media(prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+@font-face {
+    font-family: Poppins;
+    src: url('./fonts/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+:root {
+    --dark-color: #424242;
+    --grey: #EDEDED;
+    --pink: #E43071;
+    --light-pink: #FFC1D8;
+    --border-radius: 38px;
+    --border: 2px;
+    --container-width: 1200px;
+    --container-padding-x: 15px;
+    --transition-duration: 0.2s;
+    --font-family: 'Poppins', sans-serif;
+    --header-height: 100px;
+}
+
+body {
+    max-width: 100%;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2.3;
+    color: var(--grey);
+}
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin: auto;
+    padding-inline: var(--container-padding-x);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+.header {
+    min-height: var(--header-height);
+    background-color: var(--pink);
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.goodlyfe {
+    width: 187px;
+    height: 44px;
+    /*padding-top: 30px;*/
+    padding-left: 35px;
+}
+
+a, li {
+    list-style-type: none;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    font-weight: 400;
+}
+
+a:hover {
+    color: rgb(54, 50, 50);
+}
+
+a, button {
+    transition-duration: var(--transition-duration);
+}
+
+.search {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    padding-top: 9px;
+    padding-left: 5px;
+}
+.zoom {
+    display: inline-flex;
+}
+
+.button-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 166px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 0.9;
+    font-family: var(--font-family);
+    color: var(--pink);
+    border-radius: var(--border-radius);
+    background-color: white;
+    border: none;
+    margin-right: 35px;
+}
+
+.button:hover {
+    background-color: var(--grey);
+
+}
+.button-pink:hover {
+    background-color: var(--dark-color);
+}
+
+.button-panel-1 {
+    position: absolute;
+    width: 16.67vw;
+    height: 4.86vw;
+    border-radius: var(--border-radius);
+    border: var(--border);
+    background-color: var(--pink);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1.11vw;
+    color: rgb(255, 255, 255);
+    top: 430px;
+    left: 410px;
+
+
+}
+
+.welcome {
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    font-size: 4.86vw;
+}
+
+.panel-1 {
+    /*min-height: calc(100vw - var(--header-height));*/
+    height: 48.6;
+}
+
+.banner-1 {
+    width: 100%;
+    height: 100%;
+    
+
+
+}
+
+.riddles-and-button {
+    position: relative;
+    width: 100%;
+}
+
+
+.content-panel-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 250px;
+    left: 30%;
+}
+
+.banner-pagination {
+    width: 6.73vw;
+    height: 1.18vw;
+    position: absolute;
+    top: 470px;
+    left: 50px;
+}
+
+.banner-pagination-list {
+    display: flex;
+    padding-top: 170px;
+    padding-left: 650px;
+    gap: 10px;
+}
+.button-banner-pagination {
+    border-radius: 50%;
+    width: 0.83vw;
+    aspect-ratio: 1;
+    border: none;
+
+}
+
+.is-current {
+    background-color: var(--pink);
+    width: 1.18vw;
+}
+
+.welcome-span {
+    color: var(--light-pink);
+}
+.button-panel-1 {
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+.button-banner-pagination:not(.is-current):hover::after {
+    background-color: var(--light-pink);
+}
+
+.new-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80.55vw;
+    height: 36.8vw;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.new-body-text {
+    width: 37.5vw;
+    height: 18.17vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.new-body-image {
+    position: relative;
+    height: 100%;
+    width: 27.77vw;
+
+}
+
+.new-body-image-1 {
+    width: 24vw;
+    height:27.77vw;
+}
+
+.new-body-image-2 {
+    width: 16.7vw;
+    height: 25vw;
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+
+.new-body-h2 {
+    font-weight: 700;
+    font-size: 2.7vw;
+    color: var(--pink);
+    margin-bottom: -10px;
+}
+
+.new-body-p {
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 2.3;
+    color: var(--dark-color);
+}
+
+.new-body-button {
+    font-weight: 600;
+    font-size: 0.83vw;
+    color: var(--pink);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--pink);
+    background-color: white;
+    width: 11.42vw;
+    height: 2.8vw;
+    margin-top: 20px;
+}
+
+.panel-2 {
+    width: 100%;
+    height: 48.61vw;
+    position: relative;
+    margin-top: 100px;
+}
+
+.panel-2-img {
+    width: 100%; /* Заполняет ширину контейнера */
+    height: 100%; /* Заполняет высоту контейнера */
+    object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+}
+.panel-2-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.panel-2-text {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.panel-2-title {
+    font-weight: 700;
+    font-size: 4.17vw;
+    color: white;
+    margin-bottom: -10px;
+}
+
+.panel-2-p {
+    font-weight: 400;
+    font-size: 1.18vw;
+    line-height: 1.4;
+    color: var(--grey);
+}
+
+.panel-2-button {
+    width: 16.46vw;
+    height: 4.72vw;
+    background-color: var(--pink);
+    font-weight: 600;
+    font-size: 1.1vw;
+    color: white;
+    border-radius: var(--border-radius);
+    border: none;
+    margin-top: 10px;
+}
+
+.facilities {
+    width: 83.33vw;
+    height: 29.86vw;
+    margin: auto;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.facilities-text {
+    width: 34vw;
+}
+
+.facilities-title {
+    font-weight: 700;
+    color: var(--pink);
+    font-size: 2.78vw;
+    margin-bottom: -10px;
+}
+
+.facilities-p {
+    font-weight: 400;
+    font-size: 1.11vw;
+    line-height: 2.3;
+    color: var(--dark-color);
+}
+
+.facilities-button {
+    width: 16.46vw;
+    height: 3.72vw;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--pink);
+    font-weight: 600;
+    font-size: 1.11vw;
+    color: var(--pink);
+    background-color: white;
+    margin-top: 20px;
+}
+
+.facilities-images {
+    position: relative;
+}
+
+.facilities-img-1 {
+    width: 30.83vw;
+    height: 20.56vw;
+    position: absolute;
+    top: -150px;
+    right: 150px;
+}
+
+.facilities-img-2 {
+    width: 29.3vw;
+    height: 19.51vw;
+    margin-bottom: -150px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+    .banner-pagination {
+        top: 60%;
+        left: -5%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+.header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 20px;
+    padding-inline: 15px;
+}
+.panel-1 {
+    padding-inline: 15px;
+}
+
+.menu {
+    order: 1;
+    flex-basis: 100%;
+}
+
+.banner-pagination {
+    left: -15%;
+}
+
+.button-panel-1 {
+    left: 20%;
+    top: 70%;
+}
+.content-panel-1 {
+    top: 40%;
+}
+
+}
+
+@media (max-width: 1130px) {
+    .banner-pagination {
+        top: 50%;
+        left: -20%;
+    }
+    .content-panel-1 {
+        top: 30%;
+    }
+
+    .button-panel-1 {
+        top: 60%
+    }
+}
+
+@media (max-width: 960px){
+    .banner-pagination {
+        top: 40%;
+        left: -40%;
+    }
+    .button-panel-1 {
+        left: 10%;
+    }
+    .content-panel-1 {
+        left: 25%;
+    }
+
+    .banner-pagination-items {
+        width: 3px;
+        height: 3px;
+    }
+    
+    .new-body-image-2 {
+        left: 50%;
+    }
+    .panel-2-banner {
+        margin-top: 200px;
+    }
+    .panel-2-text {
+        top: 30%;
+    }
+
+    .facilities-img-2 {
+        margin-bottom: 50px;
+    }
+
+    .facilities-img-1 {
+        top: -30%;
+    }
+}
+
+@media (max-width: 760px) {
+    .button-menu {
+        height: 30px;
+        width: 90px;
+    }
+    .header {
+        padding-top: 10px;
+    }
+
+    .navigation {
+        column-gap: 24px;
+        height: 31px;
+    }
+
+    .banner-pagination {
+        top: 20%;
+        left: -50%;
+    }
+    .button-panel-1 {
+        top: 45%;
+        left: 10%;
+    }
+    .content-panel-1 {
+        top: 20%;
+        left: 30%;
+    }
+    .new-body {
+        flex-direction: column;
+        gap: 70px;
+    }
+    .new-body-image-2 {
+        top: 40%;
+
+    }
+
+    .new-body-button {
+        width: 100%;
+    }
+
+    .facilities {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 250px;
+    }
+    .facilities-img-1 {
+        right: 70px;
+
+    }
+
+    .facilities-button {
+        width: 100%;
+    }
+}
+
+
